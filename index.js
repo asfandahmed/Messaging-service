@@ -1,6 +1,9 @@
+const mongoose 			= require('mongoose');
 var restify 			= require('restify');
 var server 				= restify.createServer();
 server.use(restify.plugins.bodyParser());
+let connection = mongoose.connect('mongodb://mongodb:27017/messaging_service');
+console.log(JSON.stringify(connection))
 //routes
 server.get('/hello/:name', respond);
 server.post('/send', 
@@ -21,6 +24,10 @@ server.listen(8080, () => {
  console.log('%s listening at %s', server.name, server.url);
 });
 
-function respond(req, res, next) { 
+async function respond(req, res, next) { 
+	await test()
 	res.send('hello '+ req.params.name);
+}
+async function test(){
+	console.log('yola')
 } 
