@@ -1,0 +1,29 @@
+{
+  "name": "messaging-service",
+  "version": "0.0.1",
+  "description": "A restfull instant messaging service.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asfandahmed/Messaging-service.git"
+  },
+  "author": "Asfand yar Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asfandahmed/Messaging-service/issues"
+  },
+  "homepage": "https://github.com/asfandahmed/Messaging-service#readme",
+  "dependencies": {
+    "redis": "^2.8.0",
+    "restify": "^6.3.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5",
+    "sinon": "^4.5.0"
+  }
+}
