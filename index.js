@@ -1,9 +1,12 @@
 const mongoose 			= require('mongoose');
 var restify 			= require('restify');
 var server 				= restify.createServer();
+var socket				= require('socket.io');
+let io 					= socket(server);
+
 server.use(restify.plugins.bodyParser());
 let connection = mongoose.connect('mongodb://mongodb:27017/messaging_service');
-console.log(JSON.stringify(connection))
+
 //routes
 server.get('/hello/:name', respond);
 server.post('/send', 
@@ -20,6 +23,10 @@ server.post('/send',
 	}
 );
 
+
+io.on('connection', function (){
+	console.log('user connected')
+})
 server.listen(8080, () => {
  console.log('%s listening at %s', server.name, server.url);
 });

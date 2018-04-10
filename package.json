@@ -20,7 +20,8 @@
   "dependencies": {
     "mongoose": "^5.0.12",
     "redis": "^2.8.0",
-    "restify": "^6.3.4"
+    "restify": "^6.3.4",
+    "socket.io": "^2.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -29,6 +30,9 @@
     "sinon": "^4.5.0"
   },
   "nodemonConfig": {
-    "ignore": ["test/*", "node_modules/*"]
+    "ignore": [
+      "test/*",
+      "node_modules/*"
+    ]
   }
 }
